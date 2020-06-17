@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>parainformaticos.com</title>
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+       <script type="text/javascript">
+            $(function () {
+                $.ajax({
+                    url: "Peru",
+                    success: function (data) {
+                        var option = "";
+                        $(data).find('nodo').each(function () {
+                            option += "<option value=\""
+                                    + $(this).attr('id') + "\">"
+                                    + $(this).text() + "</option>";
+                        });
+                        $("#iddepartamento").html(option);
+                    }
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div style="text-align: center">
+            <select id="iddepartamento"></select><br/>
+        </div>
+    </body>
+</html>
