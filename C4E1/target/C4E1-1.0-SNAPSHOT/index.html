@@ -1,0 +1,50 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>JSP Page</title>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script type="text/javascript">
+        $(function () {
+            $("#boton").click(function () {
+                $.ajax(
+                        {
+                            url: "Valida", 
+                            data: {
+                                nombre: $("#nombre").val(), 
+                                nacimiento: $("#nacimiento").val(),
+                                sueldo: $("#sueldo").val()},
+                            type: "post",
+                            success: function (data) {
+                                $('#msg').html(data);
+                            }});
+                });
+            });
+      </script> 
+   </head>
+   <body>
+      <h3 style="text-align: center"> Ingrese datos correctamente </h3>
+      <p id="msg" style="text-align: center;font-weight: bold"></p>
+      <form>
+         <table style="margin: auto">
+            <tr>
+               <td>Su nombre</td>
+               <td> <input type="text" id="nombre" size="30" maxlength="50"/> </td>
+            </tr>
+            <tr>
+               <td>Nacimiento</td>
+               <td> <input type="text" id="nacimiento" size="10" maxlength="10"/> dd/mm/aaaa </td>
+            </tr>
+            <tr>
+               <td>Sueldo</td>
+               <td> <input type="text" id="sueldo" size="10" maxlength="10"/> </td>
+            </tr>
+            <tr>
+               <td colspan="2">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" style="text-align: center"> <input type="button" id="boton" value="Enviar Datos"/> </td>
+            </tr>
+         </table>
+      </form>
+   </body>
+</html>
