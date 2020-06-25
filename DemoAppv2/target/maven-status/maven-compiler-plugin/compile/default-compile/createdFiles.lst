@@ -1,0 +1,6 @@
+edu\cibertec\demoapp\ServletPeru.class
+edu\cibertec\demoapp\ServletLogin.class
+edu\cibertec\demoapp\ServletProveedores.class
+edu\cibertec\demoapp\Clients.class
+edu\cibertec\demoapp\ServletClientes.class
+edu\cibertec\demoapp\ServletLogout.class
